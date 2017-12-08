@@ -1,6 +1,7 @@
 package com.codekul.SpringRestDemo.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * Created by pooja on 8/12/17.
@@ -11,6 +12,18 @@ public class Student {
     String id;
     String name;
     String city;
+
+    @DBRef
+    Dept dept;
+
+    public Dept getDept() {
+        return dept;
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
+
 
     public String getId() {
         return id;
